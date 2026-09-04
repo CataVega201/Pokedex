@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explora información detallada de tus Pokémon favoritos."
+    />
+    <title>Pokémon Explorer</title>
+    <link rel="preconnect" href="https://pokeapi.co" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio de Pokémon Explorer">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Pokémon Explorer</span>
+      </a>
+      <p class="header-status">Una enciclopedia impulsada por PokéAPI</p>
+    </header>
+
+    <main id="inicio">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <p class="section-eyebrow hero-eyebrow">Pokédex interactiva</p>
+        <h1 class="hero-title" id="hero-title">Descubre el mundo Pokémon</h1>
+        <p class="hero-description">
+          Busca, explora y conoce las características de cada Pokémon en un solo lugar.
+        </p>
+
+        <form class="pokemon-search" role="search">
+          <label class="visually-hidden" for="pokemon-search-input">Buscar un Pokémon</label>
+          <input
+            id="pokemon-search-input"
+            name="pokemon-search"
+            type="search"
+            placeholder="Busca por nombre o número"
+            autocomplete="off"
+          />
+          <button type="submit">Buscar</button>
+        </form>
+      </section>
+
+      <section class="browser-section" aria-labelledby="browser-title">
+        <div class="browser-heading">
+          <div>
+            <p class="section-eyebrow browser-eyebrow">Explorador</p>
+            <h2 class="browser-title" id="browser-title">Pokémon</h2>
+          </div>
+          <p class="browser-count" aria-live="polite">Preparando la Pokédex</p>
+        </div>
+
+        <div class="browser-controls" aria-label="Controles del explorador">
+          <div class="control-group">
+            <label for="type-filter">Tipo</label>
+            <select id="type-filter" name="type-filter">
+              <option value="all">Todos los tipos</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="generation-filter">Generación</label>
+            <select id="generation-filter" name="generation-filter">
+              <option value="all">Todas las generaciones</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="category-filter">Categoría</label>
+            <select id="category-filter" name="category-filter">
+              <option value="all">Todos</option>
+              <option value="regular">Regular</option>
+              <option value="legendary">Legendario</option>
+              <option value="mythical">Mítico</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="sort-filter">Ordenar</label>
+            <select id="sort-filter" name="sort-filter">
+              <option value="number-asc">Número: menor a mayor</option>
+              <option value="number-desc">Número: mayor a menor</option>
+              <option value="name-asc">Nombre: A a Z</option>
+              <option value="name-desc">Nombre: Z a A</option>
+              <option value="experience-asc">Experiencia: menor a mayor</option>
+              <option value="experience-desc">Experiencia: mayor a menor</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pokemon-grid" aria-live="polite" aria-busy="false"></div>
+
+        <div class="browser-actions">
+          <button class="load-more-button" type="button">Cargar más Pokémon</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-copy">Datos de Pokémon proporcionados por PokéAPI.</p>
+    </footer>
+  </body>
+</html>
